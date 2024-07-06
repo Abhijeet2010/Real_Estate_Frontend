@@ -1,0 +1,61 @@
+@import "../../../responsive.scss";
+
+.searchInput {
+  .type {
+    button {
+      padding: 16px 36px;
+      border: 1px solid #999;
+      background-color: whte;
+      cursor: pointer;
+      text-transform: capitalize;
+
+      &.active {
+        background-color: black;
+        color: white;
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-right: none;
+      }
+
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-left: none;
+      }
+    }
+  }
+  form {
+    display: flex;
+    height: 64px;
+    width: 100%;
+    border: 1px solid #999;
+    justify-content: space-between;
+    outline: none;
+
+    @include sm {
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      // margin: 10px 0;
+    }
+
+    input {
+      // width: 200px;
+      border: none;
+      outline: none;
+      padding: 0px 10px;
+
+      @include sm {
+        padding: 15px 20px;
+        border-bottom: 1px solid gray;
+      }
+    }
+    button {
+      flex: 1;
+      border: none;
+      background-color: yellow;
+      cursor: pointer;
+    }
+  }
+}

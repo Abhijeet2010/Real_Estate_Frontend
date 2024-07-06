@@ -22,14 +22,15 @@ nav {
   .left {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
+    gap: 50px;
     flex: 3;
 
     .logo {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+
       font-size: 1.3vw;
       font-weight: 700;
 
@@ -56,6 +57,7 @@ nav {
     gap: 50px;
     flex: 2;
     height: 100%;
+    background-color: rgb(255, 220, 168);
 
     @include md {
       background-color: transparent;
@@ -66,6 +68,7 @@ nav {
     }
 
     .register {
+      z-index: 9999;
       background-color: rgb(255, 225, 56);
     }
 
