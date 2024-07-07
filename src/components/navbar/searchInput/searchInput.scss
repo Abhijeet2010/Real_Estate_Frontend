@@ -5,7 +5,8 @@
     button {
       padding: 16px 36px;
       border: 1px solid #999;
-      background-color: whte;
+      border-bottom: none;
+      background-color: white;
       cursor: pointer;
       text-transform: capitalize;
 
@@ -52,7 +53,7 @@
       }
     }
     button {
-      flex: 1;
+      flex: 0.5;
       border: none;
       background-color: yellow;
       cursor: pointer;
