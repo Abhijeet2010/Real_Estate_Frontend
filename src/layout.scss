@@ -1,9 +1,8 @@
 @import "./responsive.scss";
 .layout {
   max-width: 1366px;
-  height: 100vh;
+  height: calc(100vh - 100px);
   padding: 0 20px;
-
   margin: 0 auto;
 
   @include lg {

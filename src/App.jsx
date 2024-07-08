@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Layout from "./Pages/layout/Layout";
 import ListPage from "./Pages/listpage/ListPage";
+import SinglePage from "./Pages/singlepage/SinglePage";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -27,9 +28,9 @@ const App = () => {
           element: <ListPage />,
         },
         {
-          path: "/:id",
+          path: "/property/:id",
           element: <SinglePage />,
-        }
+        },
       ],
     },
   ]);
