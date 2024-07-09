@@ -22,11 +22,25 @@ const ListCard = ({ data }) => {
         <div className="bottom">
           <div className="features">
             <div className="feature">
-              <span>{data.bedroom} Bedroom</span>
+              <span>
+                <img src="./bedroom.png" alt="" /> {data.bedroom} Bedrooms
+              </span>
             </div>
 
             <div className="feature">
-              <span>{data.bathroom} Bathroom</span>
+              <span>
+                <img src="./bathtub.png" alt="ab-estate" />
+                {data.bathroom} Bathroom
+              </span>
+            </div>
+
+            <div className="icons">
+              <div className="savedPost bottom-icons">
+                <img src="/bookmark.png" alt="" />
+              </div>
+              <div className="chat bottom-icons">
+                <img src="./chat.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
