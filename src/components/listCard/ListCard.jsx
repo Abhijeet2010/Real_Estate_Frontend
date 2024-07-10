@@ -5,13 +5,13 @@ const ListCard = ({ data }) => {
   return (
     <div className="listcard">
       <div className="imgcontainer">
-        <Link to={"/" + data.id}>
+        <Link to={"/property/" + data.id}>
           <img src={data.img} alt={data.title} />
         </Link>
       </div>
       <div className="textcontainer">
         <h2 className="title">
-          <Link to={"/" + data.id}>{data.title}</Link>
+          <Link to={"/property/" + data.id}>{data.title}</Link>
         </h2>
         <p className="address">
           <img src="./pin.svg" alt="" />

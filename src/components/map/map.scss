@@ -1,4 +1,28 @@
 .map {
   height: 100%;
-  //   border-radius: 8px;
+    border-radius: 10px;
+
+  .popupContainer {
+    display: flex;
+
+    gap: 20px;
+
+    img {
+      width: 70px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .textContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      a {
+        color: black;
+        font-weight: 600;
+      }
+    }
+  }
 }

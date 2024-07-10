@@ -1,13 +1,14 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "./map.scss";
 import "leaflet/dist/leaflet.css";
+import { Link } from "react-router-dom";
 
 const Map = ({ items }) => {
   const position = [51.505, -0.09];
   return (
     <MapContainer
       center={position}
-      zoom={7}
+      zoom={5}
       scrollWheelZoom={false}
       className="map"
     >
@@ -20,7 +21,18 @@ const Map = ({ items }) => {
         return (
           <Marker position={[item.latitude, item.longitude]}>
             <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
+              <div className="popupContainer">
+                <img src={item.img} alt={item.title} />
+                <div className="textContainer">
+                  <Link to={"/property/" + item.id}>{item.title}</Link>
+                  <span>
+                    {item.bedroom > 1
+                      ? item.bedroom + " " + "Bedrooms"
+                      : item.bedroom + " " + "Bedroom"}
+                  </span>
+                  <b>${item.price}</b>
+                </div>
+              </div>
             </Popup>
           </Marker>
         );
