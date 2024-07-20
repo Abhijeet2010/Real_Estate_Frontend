@@ -5,6 +5,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 100px;
+  // position: relative;
 
   a {
     transition: all 0.4s ease;
@@ -22,7 +23,6 @@ nav {
   .left {
     display: flex;
     align-items: center;
-
     gap: 50px;
     flex: 3;
 
@@ -30,7 +30,6 @@ nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       font-size: 1.3vw;
       font-weight: 700;
 
@@ -68,7 +67,7 @@ nav {
     }
 
     .register {
-      z-index: 9999;
+      z-index: 99;
       background-color: rgb(255, 225, 56);
     }
 
