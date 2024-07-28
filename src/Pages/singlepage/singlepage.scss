@@ -6,7 +6,7 @@
     flex: 3;
     scroll-behavior: smooth;
     scroll-snap-type: mandatory;
-    scrollbar-color: red;
+    scrollbar-width: 0px;
 
     overflow-y: scroll;
     .wrapper {
@@ -66,8 +66,121 @@
   }
   .propertyFetures {
     flex: 2;
+    overflow-y: scroll;
+    background-color: #ffdca8;
+
     .wrapper {
       padding: 0px 30px;
+
+      .verticalList {
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        line-height: 1.4;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .featureContainer {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            height: 24px;
+            width: 24px;
+          }
+        }
+        .textContainer {
+          display: flex;
+
+          flex-direction: column;
+          justify-content: center;
+          .main-text {
+            font-size: 18px;
+            font-weight: 600;
+          }
+
+          .text {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .horizontalList {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 10px;
+        border-radius: 8px;
+        .locationContainer {
+          display: flex;
+          align-items: center;
+          line-height: 1.1;
+          gap: 10px;
+          img {
+            height: 24px;
+            width: 24px;
+          }
+
+          .main-text {
+            font-size: 15px;
+            font-weight: 600;
+          }
+
+          .text {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .roomInfoList {
+        display: flex;
+        justify-content: space-between;
+
+        .info {
+          display: flex;
+          padding: 10px;
+          background-color: white;
+          border-radius: 8px;
+          gap: 10px;
+          align-items: center;
+          img {
+            height: 24px;
+            width: 24px;
+          }
+
+          .text {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .mapContainer {
+        height: 200px;
+        width: 100%;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        button {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 15px 30px;
+          outline: none;
+          border: none;
+          cursor: pointer;
+          border-radius: 8px;
+          img {
+            height: 24px;
+            width: 24px;
+          }
+        }
+      }
     }
   }
 }

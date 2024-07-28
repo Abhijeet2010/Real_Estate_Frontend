@@ -17,9 +17,9 @@ const Map = ({ items }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      {items.map((item) => {
+      {items.map((item, index) => {
         return (
-          <Marker position={[item.latitude, item.longitude]}>
+          <Marker position={[item.latitude, item.longitude]} key={index}>
             <Popup>
               <div className="popupContainer">
                 <img src={item.img} alt={item.title} />
