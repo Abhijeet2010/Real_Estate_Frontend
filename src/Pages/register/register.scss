@@ -1,0 +1,24 @@
+@import "../../responsive.scss";
+
+.register {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  .registerContainer {
+    height: 100%;
+    flex: 3;
+  }
+  .imgContent {
+    flex: 2;
+    background-color: rgb(255, 220, 168);
+
+    @include md {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
