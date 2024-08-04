@@ -1,6 +1,8 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import "./layout.scss";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Layout = () => {
   return (
@@ -16,4 +18,14 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+const ProtectedRoutes = ({ children }) => {
+  const { currentUser } = useContext(AuthContext);
+
+  if (!currentUser) {
+    return <Navigate to="/login" />;
+  }
+
+  return children;
+};
+
+export { Layout, ProtectedRoutes };

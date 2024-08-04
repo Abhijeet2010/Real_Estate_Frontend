@@ -4,7 +4,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 120px;
   // position: relative;
 
   a {
@@ -103,6 +103,9 @@ nav {
           background-color: rgb(255, 40, 40);
           border-radius: 50%;
         }
+      }
+      .logout_btn {
+        background-color: rgb(255, 74, 74);
       }
     }
 

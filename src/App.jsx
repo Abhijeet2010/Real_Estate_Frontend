@@ -9,7 +9,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import Layout from "./Pages/layout/Layout";
+import { Layout, ProtectedRoutes } from "./Pages/layout/Layout";
 import ListPage from "./Pages/listpage/ListPage";
 import SinglePage from "./Pages/singlepage/SinglePage";
 import ProfilePage from "./Pages/profilepage/ProfilePage";
@@ -36,7 +36,11 @@ const App = () => {
         },
         {
           path: "/profile",
-          element: <ProfilePage />,
+          element: (
+            <ProtectedRoutes>
+              <ProfilePage /> ,
+            </ProtectedRoutes>
+          ),
         },
 
         {
