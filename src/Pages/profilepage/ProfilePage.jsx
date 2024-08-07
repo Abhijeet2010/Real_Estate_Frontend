@@ -32,6 +32,7 @@ const ProfilePage = () => {
             <Link to={"/update/" + currentUser.id}>
               <button> Update Profile</button>
             </Link>
+            -
           </div>
 
           <div className="info">

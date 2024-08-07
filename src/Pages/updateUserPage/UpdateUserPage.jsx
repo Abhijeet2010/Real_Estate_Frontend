@@ -8,18 +8,18 @@ import CloudinaryUploadWidget from "../../components/uploadWidget/UploadWidget.j
 const UpdateUserPage = () => {
   const { currentUser, updateUser } = useContext(AuthContext);
   const [avatar, setAvatar] = useState(currentUser.avatar);
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
 
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(false);
-    setLoading(true);
+    // setError(false);
+    // setLoading(true);
     try {
       const formData = new FormData(e.target);
-      const { username, email, password, confirm_password, avatar } =
+      const { username, email, password, confirm_password } =
         Object.fromEntries(formData);
 
       if (password !== confirm_password) {
@@ -38,7 +38,7 @@ const UpdateUserPage = () => {
       setLoading(false);
     } catch (error) {
       console.log(error.message);
-      setError(error.message);
+      // setError(error.message);
     }
   };
 
@@ -89,7 +89,7 @@ const UpdateUserPage = () => {
             cloudName: "abhijeet2010",
             uploadPreset: "real-estate",
             multiple: false,
-            folder: "avatars",
+            folder: "avatar",
             maxImageFileSize: 200000,
           }}
           setAvatar={setAvatar}
