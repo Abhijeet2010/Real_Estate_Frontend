@@ -2,7 +2,7 @@ import Chat from "../../components/chat/Chat";
 import List from "../../components/MyList/MyList";
 import "./profilepage.scss";
 import apiRequest from "../../lib/apiRequest.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext.jsx";
 
@@ -29,7 +29,9 @@ const ProfilePage = () => {
         <div className="wrapper">
           <div className="title">
             <h2>My Profile</h2>
-            <button> Update Profile</button>
+            <Link to={"/update/" + currentUser.id}>
+              <button> Update Profile</button>
+            </Link>
           </div>
 
           <div className="info">

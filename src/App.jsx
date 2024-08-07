@@ -15,6 +15,7 @@ import SinglePage from "./Pages/singlepage/SinglePage";
 import ProfilePage from "./Pages/profilepage/ProfilePage";
 import Login from "./Pages/login/Login";
 import Register from "./Pages/register/Register";
+import UpdateUserPage from "./Pages/updateUserPage/UpdateUserPage";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -50,6 +51,15 @@ const App = () => {
         {
           path: "/register",
           element: <Register />,
+        },
+
+        {
+          path: "/update/:id",
+          element: (
+            <ProtectedRoutes>
+              <UpdateUserPage />
+            </ProtectedRoutes>
+          ),
         },
       ],
     },

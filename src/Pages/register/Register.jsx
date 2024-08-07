@@ -1,6 +1,7 @@
 import "./register.scss";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import apiRequest from "../../lib/apiRequest";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -12,15 +13,13 @@ const Register = () => {
     const password = formData.get("password");
 
     try {
-      const response = await axios.post(
-        "/auth/register",
-        {
-          username,
-          email,
-          password,
-        }
-      );
-      console.log(response);
+      const response = await apiRequest.post("/auth/register", {
+        username,
+        email,
+        password,
+      });
+
+      console.log(response.data);
       if (response.status === 200) navigate("/login");
     } catch (error) {
       console.log(error.response.data.message);
