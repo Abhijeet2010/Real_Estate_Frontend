@@ -54,11 +54,11 @@ const ProfilePage = () => {
             </button>
           </div>
 
-          <hr />
-
           <div className="title">
             <h2>My List</h2>
-            <button>Add New Post</button>
+            <Link to={"/addNewProperty"}>
+              <button>Add New Property</button>
+            </Link>
           </div>
 
           <List />

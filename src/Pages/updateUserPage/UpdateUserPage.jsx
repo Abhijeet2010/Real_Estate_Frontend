@@ -7,7 +7,7 @@ import CloudinaryUploadWidget from "../../components/uploadWidget/UploadWidget.j
 
 const UpdateUserPage = () => {
   const { currentUser, updateUser } = useContext(AuthContext);
-  const [avatar, setAvatar] = useState(currentUser.avatar);
+  const [avatar, setAvatar] = useState([]);
   // const [error, setError] = useState(false);
 
   // const [loading, setLoading] = useState(false);
@@ -29,7 +29,7 @@ const UpdateUserPage = () => {
         username,
         email,
         password,
-        avatar,
+        avatar: avatar[0],
       });
       console.log(res.data.data);
       updateUser(res.data.data);
@@ -83,7 +83,7 @@ const UpdateUserPage = () => {
         </div>
       </div>
       <div className="imgContent">
-        <img src={avatar || "/no-avatar.png"} alt="" />
+        <img src={avatar[0] || currentUser.avatar || "/no-avatar.png"} alt="" />
         <CloudinaryUploadWidget
           uwConfig={{
             cloudName: "abhijeet2010",
@@ -92,7 +92,7 @@ const UpdateUserPage = () => {
             folder: "avatar",
             maxImageFileSize: 200000,
           }}
-          setAvatar={setAvatar}
+          setState={setAvatar}
         />
       </div>
     </div>

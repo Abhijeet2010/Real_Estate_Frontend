@@ -2,31 +2,34 @@ import Slider from "../../components/slider/Slider";
 import { singlePostData, userData } from "../../dummy/dummyData";
 import Map from "../../components/map/Map";
 import "./singlepage.scss";
+import { useLoaderData } from "react-router-dom";
 
 const SinglePage = () => {
+  const property = useLoaderData();
+  console.log(property);
   return (
     <div className="singlepage">
       <div className="propertyInfo">
         <div className="wrapper">
-          <Slider images={singlePostData.images} />
+          <Slider images={property.imges} />
           <div className="info">
             <div className="top">
               <div className="post">
-                <h1>{singlePostData.title}</h1>
+                <h1>{property.title}</h1>
                 <div className="address">
                   <img src="/pin.png" alt="pin" />
-                  <span>{singlePostData.address}</span>
+                  <span>{property.address}</span>
                 </div>
-                <strong>${singlePostData.price}</strong>
+                <strong>Rs: {property.price}</strong>
               </div>
 
               <div className="user">
-                <img src={userData.img} alt={userData.name} />
-                <span>{userData.name}</span>
+                <img src={property.user.avatar} alt={userData.name} />
+                <span>{property.user.username}</span>
               </div>
             </div>
             <div className="bottom">
-              <p>{singlePostData.description}</p>
+              <p>{property.postDetail.desc}</p>
             </div>
           </div>
         </div>
@@ -39,7 +42,7 @@ const SinglePage = () => {
               <img src="/bookmark.png" alt="utilites" />
               <div className="textContainer">
                 <span className="main-text">Utilites</span>
-                <span className="text">Rental is Responsible</span>
+                <span className="text">{property.postDetail.utlities}</span>
               </div>
             </div>
 
@@ -47,7 +50,7 @@ const SinglePage = () => {
               <img src="/bookmark.png" alt="utilites" />
               <div className="textContainer">
                 <span className="main-text">Pet Policy</span>
-                <span className="text">Pet Allowed</span>
+                <span className="text">{property.postDetail.pet}</span>
               </div>
             </div>
 
@@ -55,7 +58,7 @@ const SinglePage = () => {
               <img src="/bookmark.png" alt="utilites" />
               <div className="textContainer">
                 <span className="main-text">Property Fees</span>
-                <span className="text">Rental is Responsible</span>
+                <span className="text">{property.postDetail.fees}</span>
               </div>
             </div>
           </div>
@@ -65,17 +68,19 @@ const SinglePage = () => {
           <div className="roomInfoList">
             <div className="info">
               <img src="/bookmark.png" alt="size" />
-              <span className="text">80sqm (861sqft)</span>
+              <span className="text">{property.postDetail.size} sqft</span>
             </div>
 
             <div className="info">
               <img src="/bedroom.png" alt="size" />
-              <span className="text">2 Bed </span>
+              <span className="text">{property.postDetail.bedroom} Bed </span>
             </div>
 
             <div className="info">
               <img src="/bathtub.png" alt="size" />
-              <span className="text">1 Bathroom</span>
+              <span className="text">
+                {property.postDetail.bathroom} Bathroom
+              </span>
             </div>
           </div>
 
@@ -85,7 +90,9 @@ const SinglePage = () => {
               <img src="/bookmark.png" alt="school" />
               <div className="textContainer">
                 <span className="main-text">School</span> <br />
-                <span className="text">230m Away</span>
+                <span className="text">
+                  {property.postDetail.school} km Away
+                </span>
               </div>
             </div>
 
@@ -93,7 +100,7 @@ const SinglePage = () => {
               <img src="/bookmark.png" alt="school" />
               <div className="textContainer">
                 <span className="main-text">Bus Stop</span> <br />
-                <span className="text">100m Away</span>
+                <span className="text">{property.postDetail.bus}km Away</span>
               </div>
             </div>
 
@@ -101,7 +108,9 @@ const SinglePage = () => {
               <img src="/bookmark.png" alt="school" />
               <div className="textContainer">
                 <span className="main-text">Restaurant</span> <br />
-                <span className="text">200m Away</span>
+                <span className="text">
+                  {property.postDetail.restaurant} m Away
+                </span>
               </div>
             </div>
           </div>

@@ -16,6 +16,8 @@ import ProfilePage from "./Pages/profilepage/ProfilePage";
 import Login from "./Pages/login/Login";
 import Register from "./Pages/register/Register";
 import UpdateUserPage from "./Pages/updateUserPage/UpdateUserPage";
+import AddNewProperty from "./Pages/addNewProperty/AddNewProperty";
+import { SinglePageLoader } from "./lib/singlePageLoader";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -33,6 +35,7 @@ const App = () => {
         },
         {
           path: "/property/:id",
+          loader: SinglePageLoader,
           element: <SinglePage />,
         },
         {
@@ -58,6 +61,14 @@ const App = () => {
           element: (
             <ProtectedRoutes>
               <UpdateUserPage />
+            </ProtectedRoutes>
+          ),
+        },
+        {
+          path: "/addNewProperty",
+          element: (
+            <ProtectedRoutes>
+              <AddNewProperty />
             </ProtectedRoutes>
           ),
         },
